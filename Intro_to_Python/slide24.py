@@ -14,6 +14,6 @@ person = {"name": "Alice", "age":25 , "city": "New York"}
 del person["age"]
 print(person)
 
-age = person.pop("age")
-print(age)
-print(person)
+# age = person.pop("age")
+# print(age)
+# print(person)
