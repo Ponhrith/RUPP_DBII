@@ -5,7 +5,7 @@ def home():
           return 'Home Page'
 @app.route('/user/<username>')
 def profile(username):
-          return f'Progile Page Of {username}'   
+          return f'Profile Page Of {username}'   
 if __name__ =='__main__':
     app.run()
     with app.test_request_context():
