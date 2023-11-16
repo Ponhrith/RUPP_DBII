@@ -141,3 +141,17 @@ def delete():
             con.close()
             # Send the transaction message to result.html
             return render_template('result.html',msg=msg)
+        
+# Route to retrieve students with Last_name containing "ra"
+@app.route('/students_with_last_name_ra')
+def students_with_last_name_ra():
+    con = sqlite3.connect("data.db")
+    con.row_factory = sqlite3.Row
+
+    cur = con.cursor()
+    cur.execute("SELECT rowid, * FROM Student WHERE Last_name LIKE '%ra%'")
+
+    rows = cur.fetchall()
+    con.close()
+
+    return render_template("students_with_last_name_ra.html", rows=rows)
